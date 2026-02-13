@@ -13,7 +13,7 @@ body, html {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Background Hearts */
+/* Floating Hearts Background */
 .heart-bg {
     position: fixed;
     top: 0;
@@ -27,7 +27,7 @@ body, html {
 .heart {
     position: absolute;
     bottom: -50px;
-    animation: floatUp linear forwards; /* 'forwards' ensures they don't snap back */
+    animation: floatUp linear forwards;
 }
 
 @keyframes floatUp {
@@ -37,24 +37,24 @@ body, html {
     }
 }
 
-/* Main Card */
+/* Glassmorphism Card */
 .container {
     z-index: 10;
     text-align: center;
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(15px);
-    padding: 40px;
-    border-radius: 20px;
+    padding: 3rem;
+    border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 500px;
 }
 
 h1 {
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
 }
 
 /* Buttons */
@@ -63,17 +63,17 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    min-height: 60px; /* Prevents layout jump when buttons resize */
+    min-height: 100px;
 }
 
 button {
-    padding: 12px 24px;
+    padding: 15px 30px;
     font-size: 1.2rem;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s ease; /* Smooth transition for hover, not scale */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #yesBtn {
@@ -85,38 +85,37 @@ button {
 #noBtn {
     background-color: #fff;
     color: #555;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Utility Class to Hide Elements */
 .hidden {
     display: none !important;
 }
 
-/* The Love Letter Styling */
+/* Scrolling Love Letter */
 #response-container {
     max-height: 60vh;
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
 }
+
 #response-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
 }
 
 .love-line {
     font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #fff;
-    text-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     margin: 15px 0;
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInName 1s ease forwards;
+    transform: scale(0.9);
+    animation: bloom 1s ease forwards;
 }
 
-@keyframes fadeInName {
+@keyframes bloom {
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
     }
 }
